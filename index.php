@@ -13,5 +13,6 @@ $firebasePath = '/';
 /// --- Making calls
 $fb = new fireBase($url, $token);
 $response = $fb->push($firebasePath, $arduino_data);
+echo ($response) ;
 sleep(2);
 ?>
