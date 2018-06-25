@@ -20,7 +20,7 @@ $securityPath = '/arduinos/2/securityState/' ;
 
 $Alert = $fb->get($alertPath1) ;
 $securityState = $fb->get($securityPath) ;
-if (strcmp($securityState, "yes") == 0 )
+if ($securityState == "yes" )
     $fb->update($alertPath2, ['alert'=>'no']) ;
 echo('A') ;
 echo trim($Alert, '"') ;
