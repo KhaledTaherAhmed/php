@@ -14,12 +14,18 @@ $fb = new fireBase($url);
 $response = $fb->push($firebasePath, $arr );
 */
 
-$SSpath1 = '/arduinos/2/alert/' ;
-$SSpath2 = '/arduinos/2/' ;
+$alertPath1 = '/arduinos/2/alert/' ;
+$alertPath2 = '/arduinos/2/' ;
+$securityPath = '/arduinos/2/securityState/' ;
 
-$SS = $fb->get($SSpath1) ;
-$fb->update($SSpath2, ['alert'=>'no']) ;
-echo ($SS) ;
+$Alert = $fb->get($alertPath1) ;
+$securityState = $fb->get($securityPath) ;
+$fb->update($alertPath2, ['alert'=>'no']) ;
+echo('$') ;
+echo ($Alert) ;
+echo("\n") ;
+echo('$') ;
+echo($securityState) ;
 
 //sleep(2);
 ?>
