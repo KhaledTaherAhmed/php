@@ -22,4 +22,4 @@ $fb->update($SSpath2, ['alert'=>'no']) ;
 echo ($SS) ;
 
 //sleep(2);
-?>ss
+?>
