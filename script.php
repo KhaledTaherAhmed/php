@@ -1,18 +1,25 @@
    
 <?php
 include 'firebaseLib.php';
-// --- This is your Firebase URL
-$url = 'https://arduino-6055f.firebaseio.com';
-// --- Use your token from Firebase here
-$token = 'R9EG1DfYCAFJOd6QZ0lTgmJiBaxpZBPchgzjRsY4';
-// --- Here is your parameter from the http GET
-$arduino_data = $_GET['arduino_data'];
-// --- $arduino_data_post = $_POST['name'];
-// --- Set up your Firebase url structure here
-$firebasePath = '/';
-/// --- Making calls
-$fb = new fireBase($url, $token);
-$response = $fb->push($firebasePath, $arduino_data);
-echo ($response) ;
-sleep(2);
-?>
+
+$url = 'https://systemsecurity-e8ddc.firebaseio.com';
+
+//$arduino_data = $_GET['arduino_data'];
+
+$firebasePath = '/arduinos/2/notifications/' ;
+//$firebasePath = '/' ;
+$fb = new fireBase($url);
+
+/*$arr = ['date' => '2002-11-3', 'location'=>'room2', 'seen'=>'no', 'type'=>'motion'] ;
+$response = $fb->push($firebasePath, $arr );
+*/
+
+$SSpath1 = '/arduinos/2/alert/' ;
+$SSpath2 = '/arduinos/2/' ;
+
+$SS = $fb->get($SSpath1) ;
+$fb->update($SSpath2, ['alert'=>'no']) ;
+echo ($SS) ;
+
+//sleep(2);
+?>ss
