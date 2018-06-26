@@ -4,15 +4,21 @@ include 'firebaseLib.php';
 
 $url = 'https://systemsecurity-e8ddc.firebaseio.com';
 
-//$arduino_data = $_GET['arduino_data'];
+$id =  $_GET['id'] ;
 
-$firebasePath = '/arduinos/2/notifications/' ;
+$location = $_GET['location'];
+$type = $_GET['type'] ;
+
+if ($type == "fire")
+    $type = "fire" ;
+
+$firebasePath = '/arduinos/'.$id.'/notifications/' ;
 //$firebasePath = '/' ;
 $fb = new fireBase($url);
 
-/*$arr = ['date' => '2002-11-3', 'location'=>'room2', 'seen'=>'no', 'type'=>'motion'] ;
+date_default_timezone_set("Africa/Cairo");
+$arr = ['date' => date("Y/m/d").":".date("h:i:sa"), 'location'=> $location, 'seen'=>'no', 'type'=>$type] ;
 $response = $fb->push($firebasePath, $arr );
-*/
 
 $alertPath1 = '/arduinos/2/alert/' ;
 $alertPath2 = '/arduinos/2/' ;
