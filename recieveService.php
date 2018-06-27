@@ -10,6 +10,8 @@ $alertPath1 = '/arduinos/'.$id.'/alert/' ;
 $alertPath2 = '/arduinos/'.$id.'/' ;
 $securityPath = '/arduinos/'.$id.'/securityState/' ;
 
+$fb = new fireBase($url);
+
 $Alert = $fb->get($alertPath1) ;
 $fb->update($alertPath2, ['alert'=>'no']) ;
 $securityState = $fb->get($securityPath) ;
