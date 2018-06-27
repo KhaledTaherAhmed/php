@@ -20,18 +20,4 @@ date_default_timezone_set("Africa/Cairo");
 $arr = ['date' => date("Y/m/d").":".date("h:i:sa"), 'location'=> $location, 'seen'=>'no', 'type'=>$type] ;
 $response = $fb->push($firebasePath, $arr );
 
-$alertPath1 = '/arduinos/2/alert/' ;
-$alertPath2 = '/arduinos/2/' ;
-$securityPath = '/arduinos/2/securityState/' ;
-
-$Alert = $fb->get($alertPath1) ;
-$fb->update($alertPath2, ['alert'=>'no']) ;
-$securityState = $fb->get($securityPath) ;
-
-echo('$') ;
-echo trim($securityState, '"') ;
-echo('A') ;
-echo trim($Alert, '"') ;
-
-//sleep(2);
 ?>
