@@ -17,7 +17,7 @@ $firebasePath = '/arduinos/'.$id.'/notifications/' ;
 $fb = new fireBase($url);
 
 date_default_timezone_set("Africa/Cairo");
-$arr = ['date' => date("Y/m/d").":".date("h:i:sa"), 'location'=> $location, 'seen'=>'no', 'type'=>$type] ;
+$arr = ['date' => date("Y/m/d").": ".date("h:i:sa"), 'location'=> $location, 'seen'=>'no', 'type'=>$type] ;
 $response = $fb->push($firebasePath, $arr );
 
 ?>
